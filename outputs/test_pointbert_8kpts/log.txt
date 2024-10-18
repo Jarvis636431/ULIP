@@ -1,0 +1,37 @@
+Not using distributed mode
+=> creating model: ULIP2_PointBERT_Colored
+Get openclip model:
+Finished loading the openclip model.
+training from scratch for pointbert.
+model size:
+32.50M
+=> loaded pretrained checkpoint './checkpoint/ULIP-2-PointBERT-10k-colored-pc-pretrained.pt'
+Traceback (most recent call last):
+  File "/home/server/tju/pointcloud/ULIP/utils/registry.py", line 285, in build_from_cfg
+    return obj_cls(cfg)
+  File "/home/server/tju/pointcloud/ULIP/data/dataset_3d.py", line 581, in __init__
+    with open(self.lvis_list_addr, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'data/objaverse-lvis/lvis.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 585, in <module>
+    main(args)
+  File "main.py", line 112, in main
+    zero_stats = test_zeroshot_3d_ulip2(args)
+  File "main.py", line 498, in test_zeroshot_3d_ulip2
+    test_dataset = get_dataset(None, tokenizer, args, 'val')
+  File "/home/server/tju/pointcloud/ULIP/utils/utils.py", line 241, in get_dataset
+    dataset_3d = Dataset_3D(args, tokenizer, dataset_name, train_transform)
+  File "/home/server/tju/pointcloud/ULIP/data/dataset_3d.py", line 769, in __init__
+    self.build_3d_dataset(args, self.dataset_config_dir)
+  File "/home/server/tju/pointcloud/ULIP/data/dataset_3d.py", line 783, in build_3d_dataset
+    self.dataset = build_dataset_from_cfg(config, config_others)
+  File "/home/server/tju/pointcloud/ULIP/utils/build.py", line 15, in build_dataset_from_cfg
+    return DATASETS.build(cfg, default_args = default_args)
+  File "/home/server/tju/pointcloud/ULIP/utils/registry.py", line 147, in build
+    return self.build_func(*args, **kwargs, registry=self)
+  File "/home/server/tju/pointcloud/ULIP/utils/registry.py", line 288, in build_from_cfg
+    raise type(e)(f'{obj_cls.__name__}: {e}')
+FileNotFoundError: Objaverse_Lvis_Colored: [Errno 2] No such file or directory: 'data/objaverse-lvis/lvis.json'

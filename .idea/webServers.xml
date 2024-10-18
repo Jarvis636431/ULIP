@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f8ac8721-12a1-4ee2-b89c-83777606e8f8" name="PPIO 3090 24G * 2">
+        <fileTransfer accessType="SFTP" host="117.50.222.139" port="45145" sshConfigId="2015cf94-6c20-4605-afed-593c311dc126" sshConfig="root@117.50.222.139:45145 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="5cf91e09-06e8-4101-99ab-2bf29d7c74cc" name="Shanghai A100 40G * 8">
+        <fileTransfer accessType="SFTP" host="58.34.94.176" port="10626" sshConfigId="19c63d4e-748f-474d-b4e2-43a1c503a618" sshConfig="server@58.34.94.176:10626 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
